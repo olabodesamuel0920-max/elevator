@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO Meta Tags -->
+  <title>Elevator Concept Unisex Saloon | Premium Beauty & Grooming Studio Ondo</title>
+  <meta name="description" content="Book signature haircuts, professional braids, nails, refreshing facial care, and beauty grooming around FUTA Campus Main Road, Ondo. Step out elevated.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Safety Device-Only Banner -->
+  <div class="app-banner">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+    <span><strong>Booking Preview Mode:</strong> Bookings are simulated on this browser only. WhatsApp assists with final salon confirmations.</span>
+  </div>
+
+  <!-- Premium Header & Sticky Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo-wrap" data-view-target="home">
+        <span class="logo-main">Elevator</span>
+        <span class="logo-sub">Concepts Unisex Saloon</span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a class="nav-link active" data-view-target="home">Home</a></li>
+        <li><a class="nav-link" data-view-target="services">Services</a></li>
+        <li><a class="nav-link" data-view-target="packages">Packages</a></li>
+        <li><a class="nav-link" data-view-target="gallery">Transformation Wall</a></li>
+        <li><a class="nav-link" data-view-target="tracker">Live Preview Tracker</a></li>
+        <li><a class="nav-link" data-view-target="admin">Admin Preview</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline btn-sm" id="headerBookBtn">Book Now</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       1. HOME VIEW SECTION
+       ========================================== -->
+  <main id="homeView" class="app-view active-view">
+    <section class="hero-sec">
+      <!-- Ambient Backdrops & Floating icons -->
+      <div class="floating-decor decor-glow-1"></div>
+      <div class="floating-decor decor-scissors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="9.8" y1="8.2" x2="20" y2="18"></line><line x1="9.8" y1="15.8" x2="20" y2="6"></line></svg>
+      </div>
+      <div class="floating-decor decor-comb">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6M2 12V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4M6 12V6M10 12V6M14 12V6M18 12V6"></path></svg>
+      </div>
+
+      <div class="container hero-grid">
+        <!-- Hero Text content -->
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>Premium Unisex Grooming Studio</span>
+          </div>
+          <h1 class="hero-title">Look Sharp.<br>Feel Fresh.<br><span class="gold-gradient-text serif-title">Step Out Elevated.</span></h1>
+          <p class="hero-sub">Book barbing, braids, styling, nails, facial care, and beauty grooming in one modern unisex studio around FUTA Campus Ondo.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-gold" id="heroBookCTA">Book a Service</button>
+            <button class="btn btn-outline" id="heroCatalogCTA">View Services</button>
+            <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20Elevator%20Concept%20Saloon,%20I%20would%20like%20to%20ask%20about%20a%20grooming%20session." target="_blank" class="btn btn-whatsapp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.863-9.736.001-2.599-1.01-5.048-2.847-6.886-1.837-1.837-4.29-2.85-6.891-2.851-5.438 0-9.862 4.37-9.865 9.734-.001 1.757.48 3.472 1.393 4.997l-.994 3.633 3.72-.969zm11.387-5.477c-.328-.164-1.939-.956-2.239-1.065-.301-.108-.519-.163-.739.164-.219.328-.849 1.065-1.039 1.284-.19.219-.379.245-.708.081-.328-.164-1.386-.51-2.64-1.627-.975-.87-1.633-1.946-1.824-2.274-.19-.328-.02-.505.143-.668.147-.147.328-.382.492-.573.164-.19.219-.327.328-.546.109-.219.055-.409-.027-.573-.082-.164-.739-1.777-1.012-2.433-.266-.64-.539-.553-.739-.563-.19-.009-.409-.011-.627-.011-.219 0-.573.082-.874.409-.301.328-1.147 1.119-1.147 2.727 0 1.608 1.172 3.16 1.336 3.379.164.22 2.307 3.522 5.589 4.939.78.337 1.39.539 1.86.688.784.248 1.497.213 2.06.129.627-.093 1.939-.792 2.213-1.556.274-.764.274-1.419.192-1.556-.081-.137-.301-.219-.628-.383z"/></svg>
+              <span>WhatsApp Us</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bento Layout Preview Showcase -->
+        <div class="hero-visual">
+          <div class="visual-card visual-card-1">
+            <div class="gallery-placeholder-media">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line><line x1="19.07" y1="4.93" x2="14.83" y2="9.17"></line><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line><line x1="19.07" y1="19.07" x2="14.83" y2="14.83"></line></svg>
+              <span>Premium Barbing</span>
+            </div>
+            <div class="visual-info">
+              <span class="visual-cat">Modern Grooming</span>
+              <h3 class="visual-name">Signature Haircut</h3>
+            </div>
+          </div>
+          <div class="visual-card">
+            <div class="gallery-placeholder-media">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path></svg>
+              <span>Braids & Styling</span>
+            </div>
+            <div class="visual-info">
+              <span class="visual-cat">Hair Styling</span>
+              <h3 class="visual-name">Braids & Cornrows</h3>
+            </div>
+          </div>
+          <div class="visual-card">
+            <div class="gallery-placeholder-media">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              <span>Facial Steaming</span>
+            </div>
+            <div class="visual-info">
+              <span class="visual-cat">Facial Care</span>
+              <h3 class="visual-name">Refreshing Steaming</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Short Highlights Section -->
+    <section style="background: rgba(0,0,0,0.15); border-top: 1px solid rgba(255,255,255,0.02);">
+      <div class="container">
+        <div class="sec-header">
+          <span class="sec-subtitle">Elevated Standards</span>
+          <h2 class="sec-title">Premium Salon Commerce & Care</h2>
+          <p class="sec-desc">Experience a grooming and style store designed for students, professionals, and style creators alike.</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 40px;">
+          <!-- Bento-like Highlight 1 -->
+          <div class="glass-panel" style="padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+            <div style="color: var(--gold-primary);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 style="font-size: 1.15rem;">Authentic Service</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">We coordinate directly with FUTA student schedules and provide custom options via WhatsApp. No unconfirmed online card payments required.</p>
+          </div>
+
+          <!-- Bento-like Highlight 2 -->
+          <div class="glass-panel" style="padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+            <div style="color: var(--gold-primary);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h3 style="font-size: 1.15rem;">Live Preview Tracking</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Book online and follow your appointment progress seamlessly using our tracking engine with your device-saved codes.</p>
+          </div>
+
+          <!-- Bento-like Highlight 3 -->
+          <div class="glass-panel" style="padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+            <div style="color: var(--gold-primary);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 style="font-size: 1.15rem;">Unisex Specialists</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Dedicated zones and professional experts for unisex hair styling, precise cuts, facial care sessions, and nail styling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       2. SERVICES CATALOG VIEW SECTION
+       ========================================== -->
+  <section id="servicesView" class="app-view">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-subtitle">Grooming Store</span>
+        <h2 class="sec-title">Our Premium Service Catalog</h2>
+        <p class="sec-desc">Pre-select and add services to your personal plan to build custom booking templates, then confirm pricing directly at the studio.</p>
+      </div>
+
+      <!-- Tab filter categories -->
+      <div class="catalog-layout">
+        <div class="filter-tabs-wrap">
+          <div class="filter-tabs" id="serviceTabs">
+            <button class="tab-btn active" data-category="all">All Services</button>
+            <button class="tab-btn" data-category="barbing">Barbing & Grooming</button>
+            <button class="tab-btn" data-category="styling">Hair Styling & Braids</button>
+            <button class="tab-btn" data-category="nails">Nails & Beauty</button>
+            <button class="tab-btn" data-category="facial">Facial Care</button>
+            <button class="tab-btn" data-category="beauty">Beauty Grooming</button>
+          </div>
+        </div>
+
+        <!-- Service Cards Grid -->
+        <div class="services-grid" id="servicesGrid">
+          <!-- Dynamic cards injected by app.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       3. PACKAGES VIEW SECTION
+       ========================================== -->
+  <section id="packagesView" class="app-view">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-subtitle">Curated Bundles</span>
+        <h2 class="sec-title">Premium Grooming Packages</h2>
+        <p class="sec-desc">Choose from our handpicked grooming templates. Ideal for ultimate transformations, self-care events, or student fresh-ups.</p>
+      </div>
+
+      <div class="packages-grid" id="packagesGrid">
+        <!-- Dynamic Package cards injected by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. GALLERY / TRANSFORMATION WALL VIEW SECTION
+       ========================================== -->
+  <section id="galleryView" class="app-view">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-subtitle">Transformation Wall</span>
+        <h2 class="sec-title">Studio Lookbook</h2>
+        <p class="sec-desc">Preview premium visual aesthetics and styles. Ready for insertion of our real transformation records, braiding work, and salon photos.</p>
+      </div>
+
+      <!-- Gallery Filters -->
+      <div class="gallery-filter-wrap">
+        <div class="gallery-tabs" id="galleryTabs">
+          <button class="tab-btn active" data-gallery-cat="all">All Media</button>
+          <button class="tab-btn" data-gallery-cat="barbing">Barbing</button>
+          <button class="tab-btn" data-gallery-cat="braids">Braids & Styling</button>
+          <button class="tab-btn" data-gallery-cat="facial">Facial & Steaming</button>
+          <button class="tab-btn" data-gallery-cat="nails">Nails & Touches</button>
+          <button class="tab-btn" data-gallery-cat="interior">Studio Interior</button>
+        </div>
+      </div>
+
+      <!-- Bento Gallery Grid -->
+      <div class="gallery-grid-bento" id="galleryGrid">
+        <!-- Dynamic placeholders in bento arrangement -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       5. LIVE BOOKING TRACKER VIEW SECTION
+       ========================================== -->
+  <section id="trackerView" class="app-view">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-subtitle">Live Status</span>
+        <h2 class="sec-title">Live Preview Booking Tracker</h2>
+        <p class="sec-desc">Enter your unique ELV booking code below to trace your simulated appointment status instantly on this device.</p>
+      </div>
+
+      <div class="tracker-box glass-panel">
+        <div class="form-group">
+          <label class="form-label" for="trackerCodeInput">Enter Booking Code (e.g. ELV-4821)</label>
+          <div class="tracker-search-wrap">
+            <input type="text" id="trackerCodeInput" class="form-input" placeholder="ELV-XXXX" uppercase>
+            <button class="btn btn-gold" id="searchTrackerBtn">Search Code</button>
+          </div>
+        </div>
+
+        <!-- No bookings yet placeholder -->
+        <div id="trackerEmptyState" style="margin-top: 24px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 12px auto; display: block; opacity: 0.5;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          Enter a booking code. If you have not created a booking yet, please use the “Book Now” button above to simulate a code!
+        </div>
+
+        <!-- Tracker Result Panel -->
+        <div class="tracker-result-card" id="trackerResultCard">
+          <div class="tracker-result-header">
+            <div>
+              <span class="tracker-code-badge" id="trackCodeDisplay">ELV-XXXX</span>
+              <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;" id="trackNameDisplay">Customer Name</div>
+            </div>
+            <span class="tracker-status-tag" id="trackStatusDisplay">Booking Requested</span>
+          </div>
+
+          <!-- Summary list -->
+          <div class="tracker-summary-grid">
+            <div>
+              <span class="summary-item-label">Services Selected</span>
+              <div class="summary-item-val" id="trackServicesDisplay">-</div>
+            </div>
+            <div>
+              <span class="summary-item-label">Scheduled Time</span>
+              <div class="summary-item-val" id="trackTimeDisplay">-</div>
+            </div>
+            <div>
+              <span class="summary-item-label">Preview Booking Value</span>
+              <div class="summary-item-val gold" id="trackValueDisplay">Confirm with salon</div>
+            </div>
+            <div>
+              <span class="summary-item-label">WhatsApp Finalize</span>
+              <div class="summary-item-val" id="trackContactDisplay">
+                <a href="#" id="trackWhatsAppBtn" class="gold-gradient-text" style="text-decoration: underline; font-size: 0.85rem; font-weight: bold;">Send details to salon</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress timeline -->
+          <div class="tracker-timeline" id="trackerTimeline">
+            <div class="timeline-step" id="step-requested">
+              <div class="timeline-dot"></div>
+              <span class="timeline-title">Booking Requested</span>
+              <span class="timeline-desc">Your online preview booking slot is generated on this device.</span>
+            </div>
+            <div class="timeline-step" id="step-pending">
+              <div class="timeline-dot"></div>
+              <span class="timeline-title">Confirmation Pending</span>
+              <span class="timeline-desc">Simulated check by salon managers. Actionable in Admin Preview.</span>
+            </div>
+            <div class="timeline-step" id="step-confirmed">
+              <div class="timeline-dot"></div>
+              <span class="timeline-title">Appointment Confirmed</span>
+              <span class="timeline-desc">Your appointment schedule is confirmed. Welcome to Elevator Studio!</span>
+            </div>
+            <div class="timeline-step" id="step-completed">
+              <div class="timeline-dot"></div>
+              <span class="timeline-title">Service Completed</span>
+              <span class="timeline-desc">Grooming finished! Thank you for stepping out elevated.</span>
+            </div>
+            <div class="timeline-step" id="step-review">
+              <div class="timeline-dot"></div>
+              <span class="timeline-title">Review Requested</span>
+              <span class="timeline-desc">Share your self-care feedback with us directly on WhatsApp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       6. CLIENT-SIDE ADMIN PREVIEW DASHBOARD VIEW
+       ========================================== -->
+  <section id="adminView" class="app-view">
+    <div class="container">
+      <div class="glass-panel admin-card">
+        <div class="admin-header">
+          <div>
+            <h2 class="sec-title" style="font-size: 1.8rem;">Client-Side Admin Preview Dashboard</h2>
+            <p class="sec-desc" style="margin-top: 4px;">Local Device Management Dashboard. Updates instantly on this device.</p>
+          </div>
+          <span class="admin-banner-pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Admin Preview Mode
+          </span>
+        </div>
+
+        <!-- Warning block -->
+        <div class="glass-panel" style="padding: 16px 20px; border-color: var(--border-glass-hover); background: rgba(212,175,55,0.03); margin-bottom: 32px; display: flex; gap: 14px; align-items: flex-start; border-radius: var(--border-radius-md);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          <div style="font-size: 0.8rem; line-height: 1.5; color: var(--gold-light);">
+            <strong>Admin Preview Mode &mdash; bookings are stored on this device only. This is not a production login system yet.</strong> Changing booking states here instantly updates the public <strong>Live Preview Tracker</strong> for that booking code (updates instantly on this device) so you can preview the full end-to-end user experience!
+          </div>
+        </div>
+
+        <!-- Simulated statistics widgets -->
+        <div class="admin-stats">
+          <div class="stat-box glass-panel">
+            <span class="stat-label">Total Simulated Bookings</span>
+            <div class="stat-val" id="adminTotalBookings">0</div>
+          </div>
+          <div class="stat-box glass-panel">
+            <span class="stat-label">Pending Review</span>
+            <div class="stat-val gold" id="adminPendingBookings">0</div>
+          </div>
+          <div class="stat-box glass-panel">
+            <span class="stat-label">Confirmed Appointments</span>
+            <div class="stat-val" id="adminConfirmedBookings">0</div>
+          </div>
+          <div class="stat-box glass-panel">
+            <span class="stat-label">Preview Value (EST)</span>
+            <div class="stat-val gold" style="font-size: 1.35rem; margin-top: 15px;" id="adminPreviewValue">Confirm on WA</div>
+          </div>
+        </div>
+
+        <!-- Lower panel divided layouts -->
+        <div class="admin-grid">
+          <!-- Bookings list -->
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 20px;">Device Booking Register</h3>
+            
+            <div class="admin-table-wrap">
+              <table class="admin-table" id="adminBookingsTable">
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Client</th>
+                    <th>Services</th>
+                    <th>Date / Time</th>
+                    <th>Live Status Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminBookingsBody">
+                  <!-- Injected by app.js -->
+                  <tr>
+                    <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 32px 0;">No active device bookings. Simulate a booking using the "Book Now" CTA!</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Charts performance mock panel -->
+          <div>
+            <div class="glass-panel perf-card">
+              <h3 class="perf-title">Service Performance Preview</h3>
+              <div class="perf-bar-wrap" id="adminPerfBars">
+                <!-- Injected dynamically by app.js -->
+              </div>
+
+              <h3 class="perf-title" style="margin-top: 32px;">Gallery Manager Preview</h3>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 16px;">Preview how the media vault handles new records once backend cloud storage is integrated.</p>
+              <button class="btn btn-outline btn-sm" style="width: 100%;" onclick="alert('Admin Action Preview: File upload vault is simulated for client presentation. Real cloud uploads require final backend database integration.')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                Simulate Media Upload
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       7. LOCATION & DIRECTIONS SECTION (EMBEDDED)
+       ========================================== -->
+  <section style="background: rgba(0, 0, 0, 0.2); border-top: 1px solid rgba(255,255,255,0.02);">
+    <div class="container loc-grid">
+      <div class="loc-info">
+        <div class="sec-header" style="text-align: left; margin-bottom: 12px; max-width: 100%;">
+          <span class="sec-subtitle">Locate the Studio</span>
+          <h2 class="sec-title">Elevator Studio Ondo</h2>
+          <p class="sec-desc">Conveniently located near FUTA Campus, perfect for grooming visits between classes or weekend refreshes.</p>
+        </div>
+
+        <div class="loc-item">
+          <div class="loc-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <div>
+            <h4 class="loc-title">Address & Coordinates</h4>
+            <p class="loc-text">Located around FUTA Campus Main Road / Ita Oniyan, Ondo.</p>
+            <p class="loc-text" style="color: var(--gold-primary); font-size: 0.8rem; margin-top: 4px; font-weight: 500;">★ High Visibility student grooming zone</p>
+          </div>
+        </div>
+
+        <div class="loc-item">
+          <div class="loc-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </div>
+          <div>
+            <h4 class="loc-title">Studio Work Hours</h4>
+            <p class="loc-text">Monday – Saturday: 8:00 AM – 8:00 PM</p>
+            <p class="loc-text">Sunday: 12:00 PM – 7:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Safe Map placeholder -->
+      <div class="loc-map-preview">
+        <div class="map-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+          <span style="font-weight: 600; color: var(--text-light);">FUTA Campus Main Road / Ita Oniyan Zone</span>
+          <p class="map-warning-text">Located around FUTA Campus Main Road / Ita Oniyan, Ondo. Street view images may not reflect the current salon look. Contact us on WhatsApp for current directions and booking assistance.</p>
+          <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20Elevator%20Concept%20Saloon,%20could%20you%20please%20send%20me%20accurate%20directions%20to%20your%20studio?" target="_blank" class="btn btn-outline btn-sm" style="border-color: var(--gold-primary); color: var(--gold-light);">
+            Request Live Map Coordinates
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       8. MULTI-STEP BOOKING WIZARD MODAL
+       ========================================== -->
+  <div class="modal-overlay" id="bookingModalOverlay">
+    <div class="modal-box glass-panel">
+      <button class="modal-close" id="closeBookingModal" aria-label="Close Booking Panel">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <!-- Stepper Nav Circles -->
+      <div class="booking-steps-nav">
+        <div class="step-indicator active" data-step="1">
+          <div class="step-circle">1</div>
+          <span class="step-label">Service</span>
+        </div>
+        <div class="step-indicator" data-step="2">
+          <div class="step-circle">2</div>
+          <span class="step-label">Schedule</span>
+        </div>
+        <div class="step-indicator" data-step="3">
+          <div class="step-circle">3</div>
+          <span class="step-label">Details</span>
+        </div>
+        <div class="step-indicator" data-step="4">
+          <div class="step-circle">4</div>
+          <span class="step-label">Confirm</span>
+        </div>
+      </div>
+
+      <!-- Step 1: Select Service -->
+      <div class="booking-panel active" data-step-panel="1">
+        <h3 class="panel-title">Select Grooming Services</h3>
+        <div class="service-picker-list" id="modalServicePicker">
+          <!-- Injected by app.js -->
+        </div>
+        <p style="font-size: 0.75rem; color: var(--text-secondary); text-align: center;">Multi-service plans are supported! Tick multiple to build your routine.</p>
+      </div>
+
+      <!-- Step 2: Date & Time slot picker -->
+      <div class="booking-panel" data-step-panel="2">
+        <h3 class="panel-title">Choose Date & Time Slot</h3>
+        <div class="form-grid">
+          <div class="form-group col-span-2">
+            <label class="form-label" for="bookingDate">Select Appointment Date</label>
+            <input type="date" id="bookingDate" class="form-input" required>
+          </div>
+          <div class="form-group col-span-2">
+            <label class="form-label">Available Time Slots</label>
+            <div class="time-slots-grid" id="modalTimePicker">
+              <div class="time-slot-btn" data-time="09:00 AM">09:00 AM</div>
+              <div class="time-slot-btn" data-time="10:30 AM">10:30 AM</div>
+              <div class="time-slot-btn" data-time="12:00 PM">12:00 PM</div>
+              <div class="time-slot-btn" data-time="01:30 PM">01:30 PM</div>
+              <div class="time-slot-btn" data-time="03:00 PM">03:00 PM</div>
+              <div class="time-slot-btn" data-time="04:30 PM">04:30 PM</div>
+              <div class="time-slot-btn" data-time="06:00 PM">06:00 PM</div>
+              <div class="time-slot-btn" data-time="07:30 PM">07:30 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Contact details -->
+      <div class="booking-panel" data-step-panel="3">
+        <h3 class="panel-title">Enter Client Particulars</h3>
+        <div class="form-grid">
+          <div class="form-group col-span-2">
+            <label class="form-label" for="clientName">Full Name</label>
+            <input type="text" id="clientName" class="form-input" placeholder="e.g. Samuel Adebayo" required>
+          </div>
+          <div class="form-group col-span-2">
+            <label class="form-label" for="clientPhone">WhatsApp/Phone Number</label>
+            <input type="tel" id="clientPhone" class="form-input" placeholder="e.g. 08012345678" required>
+          </div>
+          <div class="form-group col-span-2">
+            <label class="form-label" for="clientNotes">Grooming & Self-Care Notes (Optional)</label>
+            <textarea id="clientNotes" class="form-input" placeholder="Any hairline notes, blade sensitivities, or specialized styling preferences..." style="height: 80px; resize: none;"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Confirm Booking details -->
+      <div class="booking-panel" data-step-panel="4">
+        <h3 class="panel-title" id="panel4Title">Review Preview Booking</h3>
+        
+        <!-- Booking Confirmation Summary -->
+        <div id="bookingConfirmSummary">
+          <div class="booking-confirm-card">
+            <div class="confirm-row">
+              <span class="confirm-label">Grooming Services</span>
+              <span class="confirm-val" id="confirmServices">-</span>
+            </div>
+            <div class="confirm-row">
+              <span class="confirm-label">Scheduled Slot</span>
+              <span class="confirm-val" id="confirmDateTime">-</span>
+            </div>
+            <div class="confirm-row">
+              <span class="confirm-label">Client Particulars</span>
+              <span class="confirm-val" id="confirmClient">-</span>
+            </div>
+            <div class="confirm-row">
+              <span class="confirm-label">Estimated Service Value</span>
+              <span class="confirm-val gold">Confirm with salon</span>
+            </div>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); text-align: center; margin-bottom: 20px; line-height: 1.5;">
+            Upon clicking "Generate Preview Slot", a device-local reservation will be stored. You will be provided with a booking code which you can immediately track, along with a direct link to send your choices to the salon on WhatsApp.
+          </p>
+        </div>
+
+        <!-- Success view (Hidden initially) -->
+        <div id="bookingSuccessSection" style="display: none;">
+          <div class="success-visual">
+            <div class="success-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <h4 style="font-size: 1.25rem;">Preview Slot Created Successfully!</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px;">Your unique client-side reservation code is:</p>
+            <div class="success-code" id="successCodeDisplay">ELV-4821</div>
+            <p style="font-size: 0.8rem; color: var(--gold-light); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+              ★ <strong>Next Step:</strong> Tap the WhatsApp button below to instantly send your selected service options and schedule to Elevator Concept Saloon for final price confirmation and booking approval!
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin: 0 auto;">
+              <a href="#" target="_blank" class="btn btn-whatsapp" id="modalWhatsAppSendBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.863-9.736.001-2.599-1.01-5.048-2.847-6.886-1.837-1.837-4.29-2.85-6.891-2.851-5.438 0-9.862 4.37-9.865 9.734-.001 1.757.48 3.472 1.393 4.997l-.994 3.633 3.72-.969zm11.387-5.477c-.328-.164-1.939-.956-2.239-1.065-.301-.108-.519-.163-.739.164-.219.328-.849 1.065-1.039 1.284-.19.219-.379.245-.708.081-.328-.164-1.386-.51-2.64-1.627-.975-.87-1.633-1.946-1.824-2.274-.19-.328-.02-.505.143-.668.147-.147.328-.382.492-.573.164-.19.219-.327.328-.546.109-.219.055-.409-.027-.573-.082-.164-.739-1.777-1.012-2.433-.266-.64-.539-.553-.739-.563-.19-.009-.409-.011-.627-.011-.219 0-.573.082-.874.409-.301.328-1.147 1.119-1.147 2.727 0 1.608 1.172 3.16 1.336 3.379.164.22 2.307 3.522 5.589 4.939.78.337 1.39.539 1.86.688.784.248 1.497.213 2.06.129.627-.093 1.939-.792 2.213-1.556.274-.764.274-1.419.192-1.556-.081-.137-.301-.219-.628-.383z"/></svg>
+                Send Booking to WhatsApp
+              </a>
+              <button class="btn btn-outline" id="modalTrackDirectBtn" style="font-size: 0.85rem;">
+                Track Booking Preview Status
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer navigation buttons inside wizard -->
+      <div class="booking-nav-buttons" id="bookingNavButtons">
+        <button class="btn btn-outline btn-sm" id="prevStepBtn" style="visibility: hidden;">Back</button>
+        <button class="btn btn-gold btn-sm" id="nextStepBtn">Next Step</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       9. MOBILE-FIRST STICKY BOOKING BAR (FLOATING CTA)
+       ========================================== -->
+  <div class="mobile-sticky-cta glass-panel" id="mobileStickyCTA">
+    <div class="sticky-details">
+      <span class="sticky-services-count" id="stickyCount">0 Services Selected</span>
+      <span class="sticky-price">Price: Confirm at Salon</span>
+    </div>
+    <button class="btn btn-gold btn-sm" id="stickyBookBtn">Book Now</button>
+  </div>
+
+  <!-- ==========================================
+       10. FLOATING WHATSAPP ASSIST BUTTON
+       ========================================== -->
+  <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20Elevator%20Concept%20Saloon,%20I'm%20visiting%20the%20booking%20platform%20and%20need%20assistance." target="_blank" class="whatsapp-float" aria-label="Contact Salon on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.863-9.736.001-2.599-1.01-5.048-2.847-6.886-1.837-1.837-4.29-2.85-6.891-2.851-5.438 0-9.862 4.37-9.865 9.734-.001 1.757.48 3.472 1.393 4.997l-.994 3.633 3.72-.969zm11.387-5.477c-.328-.164-1.939-.956-2.239-1.065-.301-.108-.519-.163-.739.164-.219.328-.849 1.065-1.039 1.284-.19.219-.379.245-.708.081-.328-.164-1.386-.51-2.64-1.627-.975-.87-1.633-1.946-1.824-2.274-.19-.328-.02-.505.143-.668.147-.147.328-.382.492-.573.164-.19.219-.327.328-.546.109-.219.055-.409-.027-.573-.082-.164-.739-1.777-1.012-2.433-.266-.64-.539-.553-.739-.563-.19-.009-.409-.011-.627-.011-.219 0-.573.082-.874.409-.301.328-1.147 1.119-1.147 2.727 0 1.608 1.172 3.16 1.336 3.379.164.22 2.307 3.522 5.589 4.939.78.337 1.39.539 1.86.688.784.248 1.497.213 2.06.129.627-.093 1.939-.792 2.213-1.556.274-.764.274-1.419.192-1.556-.081-.137-.301-.219-.628-.383z"/></svg>
+  </a>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-logo-wrap">
+        <a href="#" class="logo-wrap" data-view-target="home">
+          <span class="logo-main" style="font-size: 1.2rem;">Elevator</span>
+          <span class="logo-sub" style="font-size: 0.6rem;">Concepts Unisex Saloon</span>
+        </a>
+        <p class="footer-logo-desc">Modern unisex grooming and self-care studio around FUTA Campus Ondo. Offering barbing, hair styling, braids, nails, facial care, and premium beauty services.</p>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Navigation</h3>
+        <ul class="footer-links">
+          <li><a data-view-target="home">Home View</a></li>
+          <li><a data-view-target="services">Services Catalog</a></li>
+          <li><a data-view-target="packages">Curated Packages</a></li>
+          <li><a data-view-target="gallery">Transformation Wall</a></li>
+          <li><a data-view-target="tracker">Live Preview Tracker</a></li>
+          <li><a data-view-target="admin">Admin Preview Dashboard</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">WhatsApp Assist</h3>
+        <ul class="footer-links" style="gap: 16px;">
+          <li>
+            <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20Elevator%20Concept%20Saloon,%20could%20you%20please%20send%20me%20accurate%20directions%20to%20your%20studio?" target="_blank" style="display: flex; align-items: center; gap: 8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Get Coordinates & Directions</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20Elevator%20Concept%20Saloon,%20I'd%20like%20to%20ask%20about%20your%20service%20pricing." target="_blank" style="display: flex; align-items: center; gap: 8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              <span>Confirm Active Price Sheets</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-credits">
+        &copy; 2026 Elevator Concept Unisex Saloon. Designed for Premium Grooming.
+      </div>
+      <div class="footer-credits">
+        * Admin Preview Dashboard is for showcase only. No external cloud Sync active.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
