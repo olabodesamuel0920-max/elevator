@@ -30,8 +30,8 @@ The multi-step wizard guides customers through choosing their services, selectin
 <!-- slide -->
 ![Booking Success Code](file:///C:/Users/USER/.gemini/antigravity/brain/c90e5a73-ccd7-487c-992d-976f7171a131/screenshot_booking_success.png)
 <!-- slide -->
-### 🔍 Live Preview Tracker & ⚙️ Sample Admin View
-See the booking updates in action. Updating booking status in the sample admin panel instantly updates the customer's live tracker timeline on this device.
+### 🔍 Live Preview Tracker & ⚙️ Owner Demo Admin Preview
+See the booking updates in action. Updating booking status in the Owner Demo Admin Preview instantly updates the customer's live tracker timeline on this device.
 
 ![Live Preview Tracker View](file:///C:/Users/USER/.gemini/antigravity/brain/c90e5a73-ccd7-487c-992d-976f7171a131/screenshot_tracker.png)
 <!-- slide -->
@@ -54,7 +54,7 @@ We have engineered a premium, lightning-fast Single Page Application (SPA) desig
 3. **Seamless Client-Side Booking & Status Tracking**:
    - A multi-step booking wizard where customers can select dates, times, and customize self-care notes.
    - Interactive search tracker letting customers check their unique booking codes.
-   - Sample admin panel to preview how managing client requests works.
+   - Owner Demo Admin Preview to see how managing client requests works.
 
 ---
 
@@ -102,8 +102,8 @@ Use this step-by-step walkthrough to present the platform or test the entire use
 *   **Step 6: Track Booking**
     *   *Action*: Click **Track Booking Preview Status** inside the success popup.
     *   *What to observe*: You are instantly navigated to the **Live Preview Tracker** where your code search executes, showing the booking state as `Booking Requested`.
-*   **Step 7: Show Admin Preview**
-    *   *Action*: Scroll down to the **Admin Preview Dashboard** section.
+*   **Step 7: Show Owner Demo Admin Preview**
+    *   *Action*: Scroll down to the **Owner Demo Admin Preview** section.
     *   *What to observe*: The dashboard shows a sample list of bookings, including the one you just created. The simulated statistics and charts are updated on this device.
     *   *Action*: Change the status of your booking code in the admin dropdown from `Booking Requested` to `Appointment Confirmed`.
     *   *Action*: Go back up to the **Live Preview Tracker** and search your code.

@@ -314,9 +314,9 @@ document.addEventListener('DOMContentLoaded', () => {
           <button class="btn btn-outline btn-sm ${isAdded ? 'btn-gold' : ''}" data-plan-toggle="${srv.id}">
             ${isAdded ? 'Added to Plan' : 'Add to Plan'}
           </button>
-          <a href="https://wa.me/${WHATSAPP_PHONE}?text=Hello%20Elevator%20Concepts%20Saloon,%20I%20have%20a%20question%20about%20your%20${encodeURIComponent(srv.name)}%20service." target="_blank" class="btn btn-outline btn-sm" style="display:inline-flex; gap:6px;">
+          <a href="https://wa.me/${WHATSAPP_PHONE}?text=Hello%20Elevator%20Concept%20Unisex%20Saloon,%20I%20have%20a%20question%20about%20your%20${encodeURIComponent(srv.name)}%20service." target="_blank" class="btn btn-outline btn-sm" style="display:inline-flex; gap:6px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.863-9.736.001-2.599-1.01-5.048-2.847-6.886-1.837-1.837-4.29-2.85-6.891-2.851-5.438 0-9.862 4.37-9.865 9.734-.001 1.757.48 3.472 1.393 4.997l-.994 3.633 3.72-.969zm11.387-5.477c-.328-.164-1.939-.956-2.239-1.065-.301-.108-.519-.163-.739.164-.219.328-.849 1.065-1.039 1.284-.19.219-.379.245-.708.081-.328-.164-1.386-.51-2.64-1.627-.975-.87-1.633-1.946-1.824-2.274-.19-.328-.02-.505.143-.668.147-.147.328-.382.492-.573.164-.19.219-.327.328-.546.109-.219.055-.409-.027-.573-.082-.164-.739-1.777-1.012-2.433-.266-.64-.539-.553-.739-.563-.19-.009-.409-.011-.627-.011-.219 0-.573.082-.874.409-.301.328-1.147 1.119-1.147 2.727 0 1.608 1.172 3.16 1.336 3.379.164.22 2.307 3.522 5.589 4.939.78.337 1.39.539 1.86.688.784.248 1.497.213 2.06.129.627-.093 1.939-.792 2.213-1.556.274-.764.274-1.419.192-1.556-.081-.137-.301-.219-.628-.383z"/></svg>
-            Ask WA
+            Ask WA (Demo)
           </a>
         </div>
       `;
@@ -1111,4 +1111,15 @@ Please verify the current pricing sheets and confirm my booking preview. Thank y
   handleHashRoute();
   window.addEventListener('hashchange', handleHashRoute);
 
+  // Intercept WhatsApp links for demo/safety warning
+  document.addEventListener('click', (e) => {
+    const waLink = e.target.closest('a[href*="wa.me"]');
+    if (waLink) {
+      // Just warn the user that this is a simulated demo redirecting to a placeholder
+      console.log("Demo WhatsApp redirection triggered.");
+      alert("Demo Mode: This button simulates routing to Elevator Concept Unisex Saloon's WhatsApp. The phone number in this demo is a placeholder (2348000000000) and no actual bookings will be received until the salon owner replaces it with their real business number.");
+    }
+  });
+
 });
+
