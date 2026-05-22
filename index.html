@@ -128,7 +128,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
             </div>
             <h3 style="font-size: 1.15rem;">Authentic Service</h3>
-            <p style="font-size: 0.85rem; color: var(--text-secondary);">We coordinate directly with FUTA student schedules and provide custom options via WhatsApp. No unconfirmed online card payments required.</p>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">We schedule directly around FUTA student schedules and provide custom options via WhatsApp. No unconfirmed online card payments required.</p>
           </div>
 
           <!-- Bento-like Highlight 2 -->
@@ -137,7 +137,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
             </div>
             <h3 style="font-size: 1.15rem;">Live Preview Tracking</h3>
-            <p style="font-size: 0.85rem; color: var(--text-secondary);">Book online and follow your appointment progress seamlessly using our tracking engine with your device-saved codes.</p>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Book online and follow your appointment progress seamlessly on this device using your booking code.</p>
           </div>
 
           <!-- Bento-like Highlight 3 -->
@@ -255,7 +255,7 @@
         <!-- No bookings yet placeholder -->
         <div id="trackerEmptyState" style="margin-top: 24px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 12px auto; display: block; opacity: 0.5;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          Enter a booking code. If you have not created a booking yet, please use the “Book Now” button above to simulate a code!
+          Enter a booking code. If you have not created a booking yet, please use the “Book Now” button above to create a booking preview!
         </div>
 
         <!-- Tracker Result Panel -->
@@ -283,7 +283,7 @@
               <div class="summary-item-val gold" id="trackValueDisplay">Confirm with salon</div>
             </div>
             <div>
-              <span class="summary-item-label">WhatsApp Finalize</span>
+              <span class="summary-item-label">WhatsApp Confirmation</span>
               <div class="summary-item-val" id="trackContactDisplay">
                 <a href="#" id="trackWhatsAppBtn" class="gold-gradient-text" style="text-decoration: underline; font-size: 0.85rem; font-weight: bold;">Send details to salon</a>
               </div>
@@ -295,12 +295,12 @@
             <div class="timeline-step" id="step-requested">
               <div class="timeline-dot"></div>
               <span class="timeline-title">Booking Requested</span>
-              <span class="timeline-desc">Your online preview booking slot is generated on this device.</span>
+              <span class="timeline-desc">Your booking preview is saved on this device.</span>
             </div>
             <div class="timeline-step" id="step-pending">
               <div class="timeline-dot"></div>
               <span class="timeline-title">Confirmation Pending</span>
-              <span class="timeline-desc">Simulated check by salon managers. Actionable in Admin Preview.</span>
+              <span class="timeline-desc">Appointment preview reviewed by salon managers. Actionable in the Admin Preview panel below.</span>
             </div>
             <div class="timeline-step" id="step-confirmed">
               <div class="timeline-dot"></div>
@@ -331,8 +331,8 @@
       <div class="glass-panel admin-card">
         <div class="admin-header">
           <div>
-            <h2 class="sec-title" style="font-size: 1.8rem;">Client-Side Admin Preview Dashboard</h2>
-            <p class="sec-desc" style="margin-top: 4px;">Local Device Management Dashboard. Updates instantly on this device.</p>
+            <h2 class="sec-title" style="font-size: 1.8rem;">Admin Preview Dashboard</h2>
+            <p class="sec-desc" style="margin-top: 4px;">Sample Admin View for previewing bookings. Updates instantly on this device.</p>
           </div>
           <span class="admin-banner-pill">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
@@ -344,14 +344,14 @@
         <div class="glass-panel" style="padding: 16px 20px; border-color: var(--border-glass-hover); background: rgba(212,175,55,0.03); margin-bottom: 32px; display: flex; gap: 14px; align-items: flex-start; border-radius: var(--border-radius-md);">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
           <div style="font-size: 0.8rem; line-height: 1.5; color: var(--gold-light);">
-            <strong>Admin Preview Mode &mdash; bookings are stored on this device only. This is not a production login system yet.</strong> Changing booking states here instantly updates the public <strong>Live Preview Tracker</strong> for that booking code (updates instantly on this device) so you can preview the full end-to-end user experience!
+            <strong>Admin Preview Mode &mdash; bookings are stored on this device only. This is not a production login system yet.</strong> Changing booking status here instantly updates the public <strong>Live Preview Tracker</strong> for that booking code so you can preview the full salon experience on this device!
           </div>
         </div>
 
         <!-- Simulated statistics widgets -->
         <div class="admin-stats">
           <div class="stat-box glass-panel">
-            <span class="stat-label">Total Simulated Bookings</span>
+            <span class="stat-label">Total Preview Bookings</span>
             <div class="stat-val" id="adminTotalBookings">0</div>
           </div>
           <div class="stat-box glass-panel">
@@ -363,7 +363,7 @@
             <div class="stat-val" id="adminConfirmedBookings">0</div>
           </div>
           <div class="stat-box glass-panel">
-            <span class="stat-label">Preview Value (EST)</span>
+            <span class="stat-label">Estimated Service Value</span>
             <div class="stat-val gold" style="font-size: 1.35rem; margin-top: 15px;" id="adminPreviewValue">Confirm on WA</div>
           </div>
         </div>
@@ -372,7 +372,7 @@
         <div class="admin-grid">
           <!-- Bookings list -->
           <div>
-            <h3 style="font-size: 1.1rem; margin-bottom: 20px;">Device Booking Register</h3>
+            <h3 style="font-size: 1.1rem; margin-bottom: 20px;">Sample Bookings List</h3>
             
             <div class="admin-table-wrap">
               <table class="admin-table" id="adminBookingsTable">
@@ -382,13 +382,13 @@
                     <th>Client</th>
                     <th>Services</th>
                     <th>Date / Time</th>
-                    <th>Live Status Action</th>
+                    <th>Update Status</th>
                   </tr>
                 </thead>
                 <tbody id="adminBookingsBody">
                   <!-- Injected by app.js -->
                   <tr>
-                    <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 32px 0;">No active device bookings. Simulate a booking using the "Book Now" CTA!</td>
+                    <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 32px 0;">No active preview bookings. Create a booking preview using the "Book Now" button!</td>
                   </tr>
                 </tbody>
               </table>
@@ -404,10 +404,10 @@
               </div>
 
               <h3 class="perf-title" style="margin-top: 32px;">Gallery Manager Preview</h3>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 16px;">Preview how the media vault handles new records once backend cloud storage is integrated.</p>
-              <button class="btn btn-outline btn-sm" style="width: 100%;" onclick="alert('Admin Action Preview: File upload vault is simulated for client presentation. Real cloud uploads require final backend database integration.')">
+              <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 16px;">Preview how the lookbook handles new photos once backend database storage is connected.</p>
+              <button class="btn btn-outline btn-sm" style="width: 100%;" onclick="alert('Admin Preview: Photo upload is simulated for this demo. Connecting a real lookbook photo uploader will be done in the database integration phase.')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-                Simulate Media Upload
+                Simulate Photo Upload
               </button>
             </div>
           </div>
@@ -433,7 +433,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           </div>
           <div>
-            <h4 class="loc-title">Address & Coordinates</h4>
+            <h4 class="loc-title">Address & Directions</h4>
             <p class="loc-text">Located around FUTA Campus Main Road / Ita Oniyan, Ondo.</p>
             <p class="loc-text" style="color: var(--gold-primary); font-size: 0.8rem; margin-top: 4px; font-weight: 500;">★ High Visibility student grooming zone</p>
           </div>
@@ -458,7 +458,7 @@
           <span style="font-weight: 600; color: var(--text-light);">FUTA Campus Main Road / Ita Oniyan Zone</span>
           <p class="map-warning-text">Located around FUTA Campus Main Road / Ita Oniyan, Ondo. Street view images may not reflect the current salon look. Contact us on WhatsApp for current directions and booking assistance.</p>
           <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20Elevator%20Concept%20Saloon,%20could%20you%20please%20send%20me%20accurate%20directions%20to%20your%20studio?" target="_blank" class="btn btn-outline btn-sm" style="border-color: var(--gold-primary); color: var(--gold-light);">
-            Request Live Map Coordinates
+            Request Directions on WhatsApp
           </a>
         </div>
       </div>
@@ -533,7 +533,7 @@
         <div class="form-grid">
           <div class="form-group col-span-2">
             <label class="form-label" for="clientName">Full Name</label>
-            <input type="text" id="clientName" class="form-input" placeholder="e.g. Samuel Adebayo" required>
+            <input type="text" id="clientName" class="form-input" placeholder="e.g. Sample Client 001" required>
           </div>
           <div class="form-group col-span-2">
             <label class="form-label" for="clientPhone">WhatsApp/Phone Number</label>
@@ -571,7 +571,7 @@
             </div>
           </div>
           <p style="font-size: 0.8rem; color: var(--text-secondary); text-align: center; margin-bottom: 20px; line-height: 1.5;">
-            Upon clicking "Generate Preview Slot", a device-local reservation will be stored. You will be provided with a booking code which you can immediately track, along with a direct link to send your choices to the salon on WhatsApp.
+            Upon clicking "Create Booking Preview", a preview reservation will be saved on this device. You will receive a booking code which you can track, along with a direct button to send your booking to the salon on WhatsApp.
           </p>
         </div>
 
@@ -581,11 +581,11 @@
             <div class="success-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
-            <h4 style="font-size: 1.25rem;">Preview Slot Created Successfully!</h4>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px;">Your unique client-side reservation code is:</p>
+            <h4 style="font-size: 1.25rem;">Booking Preview Created Successfully!</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px;">Your unique booking code is:</p>
             <div class="success-code" id="successCodeDisplay">ELV-4821</div>
             <p style="font-size: 0.8rem; color: var(--gold-light); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.5;">
-              ★ <strong>Next Step:</strong> Tap the WhatsApp button below to instantly send your selected service options and schedule to Elevator Concept Saloon for final price confirmation and booking approval!
+              ★ <strong>Next Step:</strong> Tap the WhatsApp button below to instantly send your booking preview to Elevator Concept Saloon on WhatsApp for price confirmation and final appointment approval!
             </p>
             
             <div style="display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin: 0 auto;">
@@ -658,13 +658,13 @@
           <li>
             <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20Elevator%20Concept%20Saloon,%20could%20you%20please%20send%20me%20accurate%20directions%20to%20your%20studio?" target="_blank" style="display: flex; align-items: center; gap: 8px;">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>Get Coordinates & Directions</span>
+              <span>Get Directions & Location</span>
             </a>
           </li>
           <li>
             <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20Elevator%20Concept%20Saloon,%20I'd%20like%20to%20ask%20about%20your%20service%20pricing." target="_blank" style="display: flex; align-items: center; gap: 8px;">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-              <span>Confirm Active Price Sheets</span>
+              <span>Confirm Service Pricing</span>
             </a>
           </li>
         </ul>
@@ -676,7 +676,7 @@
         &copy; 2026 Elevator Concept Unisex Saloon. Designed for Premium Grooming.
       </div>
       <div class="footer-credits">
-        * Admin Preview Dashboard is for showcase only. No external cloud Sync active.
+        * Admin Preview Dashboard is for demonstration only. No backend database connection active.
       </div>
     </div>
   </footer>

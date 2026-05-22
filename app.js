@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const DEFAULT_BOOKINGS = [
     {
       code: 'ELV-4821',
-      name: 'Samuel Adebayo',
+      name: 'Sample Client 001',
       phone: '08012345678',
       services: ['Signature Haircut', 'Face Steaming & Refresh'],
       date: '2026-05-23',
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       code: 'ELV-9872',
-      name: 'Blessing Chioma',
+      name: 'Sample Client 002',
       phone: '08122334455',
       services: ['Braids & Cornrows', 'Nail Care & Trim'],
       date: '2026-05-24',
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       code: 'ELV-1105',
-      name: 'Tobi Alao',
+      name: 'Demo Booking A',
       phone: '09088776655',
       services: ['Student Fresh-Up Package'],
       date: '2026-05-22',
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   // WhatsApp Support Number Placeholder (Owner updates this)
-  const WHATSAPP_PHONE = '2348000000000'; // Default safe coordinate number placeholder
+  const WHATSAPP_PHONE = '2348000000000'; // Default safe phone number placeholder
 
   // ==========================================
   // 2. STATE INITIALIZATION (LOBAL STORAGE)
@@ -714,7 +714,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Next button label
     if (nextStepBtn) {
-      nextStepBtn.textContent = currentStep === 4 ? 'Generate Preview Slot' : 'Next Step';
+      nextStepBtn.textContent = currentStep === 4 ? 'Create Booking Preview' : 'Next Step';
     }
 
     // Toggle panels active classes
@@ -783,7 +783,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('successCodeDisplay').textContent = code;
     
     // Compile WhatsApp Message URL
-    const waText = `Hello Elevator Concept Unisex Saloon, I just created a preview booking slot! 💇‍♂️✨
+    const waText = `Hello Elevator Concept Unisex Saloon, I just created a booking preview! 💇‍♂️✨
 
 *Booking Details:*
 • *Code:* ${code}
@@ -792,7 +792,7 @@ document.addEventListener('DOMContentLoaded', () => {
 • *Services:* ${selectedSrvs.join(', ')}
 • *Schedule:* ${bDate} at ${selectedTimeSlot}
 ${clientNotes ? `• *Notes:* ${clientNotes}\n` : ''}
-Please verify the current pricing sheets and confirm my booking slot. Thank you!`;
+Please verify the current pricing sheets and confirm my booking preview. Thank you!`;
 
     const waLink = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(waText)}`;
     
@@ -844,7 +844,7 @@ Please verify the current pricing sheets and confirm my booking slot. Thank you!
     const found = bookings.find(b => b.code.toUpperCase() === codeStr.toUpperCase());
     
     if (!found) {
-      alert(`Booking code "${codeStr}" was not found on this device database register. Please ensure the code is correct.`);
+      alert(`Booking code "${codeStr}" was not found on this device. Please ensure the code is correct.`);
       return;
     }
 
