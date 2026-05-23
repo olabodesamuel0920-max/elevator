@@ -166,11 +166,96 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  // WhatsApp Support Number Placeholder (Owner updates this)
-  const WHATSAPP_PHONE = '2348000000000'; // Default safe phone number placeholder
+  // Confirmed safe grooming products for the store
+  const PRODUCTS = [
+    {
+      id: 'prod-comb-set',
+      category: 'tools',
+      categoryName: 'Hair Tools',
+      name: 'Professional Comb Set',
+      desc: 'Anti-static barber comb set designed for smooth detangling and precision styling styling.',
+      priceText: 'Confirm with salon',
+      availability: 'Ask on WhatsApp'
+    },
+    {
+      id: 'prod-styling-cream',
+      category: 'hair',
+      categoryName: 'Hair Care',
+      name: 'Hair Styling Cream',
+      desc: 'High-hold styling cream formulated to keep your hairstyle defined and fresh all day long.',
+      priceText: 'Confirm with salon',
+      availability: 'Ask on WhatsApp'
+    },
+    {
+      id: 'prod-edge-control',
+      category: 'hair',
+      categoryName: 'Hair Care',
+      name: 'Edge Control Gel',
+      desc: 'Premium moisture-locking edge gel that provides a sleek, long-lasting hold without flaking.',
+      priceText: 'Confirm with salon',
+      availability: 'Ask on WhatsApp'
+    },
+    {
+      id: 'prod-hair-oil',
+      category: 'hair',
+      categoryName: 'Hair Care',
+      name: 'Hair Oil',
+      desc: 'Nourishing oil blend enriched with essential oils for healthy, shiny, and vibrant hair.',
+      priceText: 'Confirm with salon',
+      availability: 'Ask on WhatsApp'
+    },
+    {
+      id: 'prod-face-cleanser',
+      category: 'facial',
+      categoryName: 'Facial Care',
+      name: 'Face Cleanser',
+      desc: 'Gentle, refreshing facial cleanser designed for daily dirt removal and premium skin wash wash.',
+      priceText: 'Confirm with salon',
+      availability: 'Ask on WhatsApp'
+    },
+    {
+      id: 'prod-face-towel',
+      category: 'facial',
+      categoryName: 'Facial Care',
+      name: 'Face Towel',
+      desc: 'Ultra-soft, highly absorbent microfibre towel ideal for gentle facial drying and personal self-care.',
+      priceText: 'Confirm with salon',
+      availability: 'Ask on WhatsApp'
+    },
+    {
+      id: 'prod-beard-oil',
+      category: 'grooming',
+      categoryName: 'Grooming Essentials',
+      name: 'Beard Care Oil',
+      desc: 'Lightweight hydrating formula designed to soften beard hairs, reduce itching, and style facial hair.',
+      priceText: 'Confirm with salon',
+      availability: 'Ask on WhatsApp'
+    },
+    {
+      id: 'prod-nail-polish',
+      category: 'nails',
+      categoryName: 'Nails & Beauty',
+      name: 'Nail Polish',
+      desc: 'High-gloss, chip-resistant premium polish in our signature gold and elegant champagne tones.',
+      priceText: 'Confirm with salon',
+      availability: 'Ask on WhatsApp'
+    },
+    {
+      id: 'prod-beauty-sponge',
+      category: 'nails',
+      categoryName: 'Nails & Beauty',
+      name: 'Beauty Sponge / Applicator',
+      desc: 'Flawless makeup blender sponge designed for smooth, streak-free cream and cosmetic application.',
+      priceText: 'Confirm with salon',
+      availability: 'Ask on WhatsApp'
+    }
+  ];
+
+  // WhatsApp Support Number (Designated review/test number)
+  const WHATSAPP_PHONE = '2348124937036'; // Test and review target number
 
   // ==========================================
-  // 2. STATE INITIALIZATION (LOBAL STORAGE)
+  // 2. STATE INITIALIZATION (LOCAL STORAGE)
   // ==========================================
   
   // Load or setup bookings database
@@ -182,6 +267,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Session Cart (selected services builder)
   let sessionCart = [];
+
+  // Product Cart (selected grooming items)
+  let productCart = JSON.parse(localStorage.getItem('elevator_product_cart')) || [];
 
   // Active Multi-step booking modal tracking
   let currentStep = 1;
@@ -195,6 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
     home: document.getElementById('homeView'),
     services: document.getElementById('servicesView'),
     packages: document.getElementById('packagesView'),
+    store: document.getElementById('storeView'),
     gallery: document.getElementById('galleryView'),
     tracker: document.getElementById('trackerView'),
     admin: document.getElementById('adminView')
@@ -783,16 +872,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('successCodeDisplay').textContent = code;
     
     // Compile WhatsApp Message URL
-    const waText = `Hello Elevator Concept Unisex Saloon, I just created a booking preview! 💇‍♂️✨
+    const waText = `Hello Elevator Concept Unisex Saloon, I would like to book an appointment! 💇‍♂️✨
 
 *Booking Details:*
-• *Code:* ${code}
-• *Name:* ${clientName}
-• *Phone:* ${clientPhone}
-• *Services:* ${selectedSrvs.join(', ')}
-• *Schedule:* ${bDate} at ${selectedTimeSlot}
+• *Booking Code:* ${code}
+• *Selected Services:* ${selectedSrvs.join(', ')}
+• *Date & Time:* ${bDate} at ${selectedTimeSlot}
+• *Customer Name:* ${clientName}
+• *Phone Number:* ${clientPhone}
 ${clientNotes ? `• *Notes:* ${clientNotes}\n` : ''}
-Please verify the current pricing sheets and confirm my booking preview. Thank you!`;
+Please confirm price and availability. Thank you!`;
 
     const waLink = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(waText)}`;
     
@@ -1077,16 +1166,275 @@ Please verify the current pricing sheets and confirm my booking preview. Thank y
   }
 
   // ==========================================
+  // 9b. GROOMING STORE SHOWCASE RENDERING
+  // ==========================================
+
+  const productsGrid = document.getElementById('productsGrid');
+  const productTabs = document.getElementById('productTabs');
+
+  function renderProducts(categoryFilter = 'all') {
+    if (!productsGrid) return;
+    productsGrid.innerHTML = '';
+
+    const filtered = categoryFilter === 'all' 
+      ? PRODUCTS 
+      : PRODUCTS.filter(p => p.category === categoryFilter);
+
+    filtered.forEach(prod => {
+      const card = document.createElement('div');
+      card.className = 'glass-panel service-card'; // Reuse style.css service-card
+      
+      card.innerHTML = `
+        <div class="service-header-wrap">
+          <div>
+            <h3 class="service-title" style="font-size: 1.1rem; line-height: 1.3;">${prod.name}</h3>
+            <span class="service-tag" style="background: rgba(212,175,55,0.08); color: var(--gold-light);">${prod.categoryName}</span>
+          </div>
+          <span class="service-price" style="font-size: 0.85rem; padding: 4px 8px;">${prod.priceText}</span>
+        </div>
+        <p class="service-desc" style="font-size: 0.8rem; margin: 12px 0;">${prod.desc}</p>
+        <div class="service-meta" style="margin-bottom: 16px;">
+          <div class="service-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span style="font-size: 0.75rem;">Stock: ${prod.availability}</span>
+          </div>
+          <div class="service-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span style="font-size: 0.75rem;">Grooming Standard</span>
+          </div>
+        </div>
+        <div class="service-actions" style="grid-template-columns: 1fr 1fr; gap: 8px; display: grid;">
+          <button class="btn btn-gold btn-sm" data-add-to-cart="${prod.id}">Add to Cart</button>
+          <a href="https://wa.me/${WHATSAPP_PHONE}?text=Hello%20Elevator%20Concept%20Unisex%20Saloon,%20I'd%20like%20to%20order%20the%20${encodeURIComponent(prod.name)}.%20Please%20confirm%20price%20and%20availability." target="_blank" class="btn btn-outline btn-sm" style="display:inline-flex; align-items:center; justify-content:center; gap:6px; font-size:0.75rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.863-9.736.001-2.599-1.01-5.048-2.847-6.886-1.837-1.837-4.29-2.85-6.891-2.851-5.438 0-9.862 4.37-9.865 9.734-.001 1.757.48 3.472 1.393 4.997l-.994 3.633 3.72-.969zm11.387-5.477c-.328-.164-1.939-.956-2.239-1.065-.301-.108-.519-.163-.739.164-.219.328-.849 1.065-1.039 1.284-.19.219-.379.245-.708.081-.328-.164-1.386-.51-2.64-1.627-.975-.87-1.633-1.946-1.824-2.274-.19-.328-.02-.505.143-.668.147-.147.328-.382.492-.573.164-.19.219-.327.328-.546.109-.219.055-.409-.027-.573-.082-.164-.739-1.777-1.012-2.433-.266-.64-.539-.553-.739-.563-.19-.009-.409-.011-.627-.011-.219 0-.573.082-.874.409-.301.328-1.147 1.119-1.147 2.727 0 1.608 1.172 3.16 1.336 3.379.164.22 2.307 3.522 5.589 4.939.78.337 1.39.539 1.86.688.784.248 1.497.213 2.06.129.627-.093 1.939-.792 2.213-1.556.274-.764.274-1.419.192-1.556-.081-.137-.301-.219-.628-.383z"/></svg>
+            Order
+          </a>
+        </div>
+      `;
+      productsGrid.appendChild(card);
+    });
+
+    // Add click listeners to Add to Cart buttons
+    document.querySelectorAll('[data-add-to-cart]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-add-to-cart');
+        addProductToCart(id);
+      });
+    });
+  }
+
+  // Handle product category tabs switching
+  if (productTabs) {
+    productTabs.addEventListener('click', (e) => {
+      if (e.target.classList.contains('tab-btn')) {
+        productTabs.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        const cat = e.target.getAttribute('data-prod-cat');
+        renderProducts(cat);
+      }
+    });
+  }
+
+  // ==========================================
+  // 9c. PRODUCT CART LOGIC & EVENTS
+  // ==========================================
+
+  const cartOverlay = document.getElementById('cartOverlay');
+  const cartPanel = document.getElementById('cartPanel');
+  const headerCartBtn = document.getElementById('headerCartBtn');
+  const closeCartBtn = document.getElementById('closeCartBtn');
+  const cartCountBadge = document.getElementById('cartCountBadge');
+  const cartEmptyState = document.getElementById('cartEmptyState');
+  const cartContent = document.getElementById('cartContent');
+  const cartItemsList = document.getElementById('cartItemsList');
+  const cartExploreBtn = document.getElementById('cartExploreBtn');
+  const cartWhatsAppOrderBtn = document.getElementById('cartWhatsAppOrderBtn');
+  const cartDeliveryPref = document.getElementById('cartDeliveryPref');
+
+  // Toggle Cart Open/Close
+  function toggleCart(isOpen) {
+    if (!cartOverlay) return;
+    if (isOpen) {
+      cartOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    } else {
+      cartOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (headerCartBtn) headerCartBtn.addEventListener('click', () => toggleCart(true));
+  if (closeCartBtn) closeCartBtn.addEventListener('click', () => toggleCart(false));
+  if (cartExploreBtn) cartExploreBtn.addEventListener('click', () => {
+    toggleCart(false);
+    navigateToView('store');
+  });
+
+  // Close cart when clicking outside on overlay background
+  if (cartOverlay) {
+    cartOverlay.addEventListener('click', (e) => {
+      if (e.target === cartOverlay) {
+        toggleCart(false);
+      }
+    });
+  }
+
+  // Add Product to Cart
+  function addProductToCart(prodId) {
+    const prod = PRODUCTS.find(p => p.id === prodId);
+    if (!prod) return;
+
+    const existing = productCart.find(item => item.id === prodId);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      productCart.push({
+        id: prod.id,
+        name: prod.name,
+        categoryName: prod.categoryName,
+        priceText: prod.priceText,
+        quantity: 1
+      });
+    }
+
+    saveProductCart();
+    
+    // Quick premium toast or visual confirmation
+    alert(`"${prod.name}" added to cart!`);
+  }
+
+  // Save and Sync Product Cart UI
+  function saveProductCart() {
+    localStorage.setItem('elevator_product_cart', JSON.stringify(productCart));
+    updateCartUI();
+  }
+
+  // Update Cart Display
+  function updateCartUI() {
+    if (!cartCountBadge) return;
+    
+    // Total count of items
+    const totalItems = productCart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCountBadge.textContent = totalItems;
+
+    // Toggle Empty state vs Cart content
+    if (productCart.length === 0) {
+      if (cartEmptyState) cartEmptyState.style.display = 'flex';
+      if (cartContent) cartContent.style.display = 'none';
+      return;
+    }
+
+    if (cartEmptyState) cartEmptyState.style.display = 'none';
+    if (cartContent) cartContent.style.display = 'flex';
+
+    if (!cartItemsList) return;
+    cartItemsList.innerHTML = '';
+
+    productCart.forEach(item => {
+      const row = document.createElement('div');
+      row.className = 'cart-item';
+      row.innerHTML = `
+        <div class="cart-item-details">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-cat">${item.categoryName}</div>
+          <div class="cart-item-price">${item.priceText}</div>
+        </div>
+        <div class="cart-item-quantity-ctrl">
+          <button class="qty-btn" data-qty-dec="${item.id}">&minus;</button>
+          <span class="qty-val">${item.quantity}</span>
+          <button class="qty-btn" data-qty-inc="${item.id}">&plus;</button>
+        </div>
+        <button class="cart-item-remove" data-cart-remove="${item.id}" aria-label="Remove item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+        </button>
+      `;
+      cartItemsList.appendChild(row);
+    });
+
+    // Add listeners inside cart list controls
+    document.querySelectorAll('[data-qty-dec]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-qty-dec');
+        const item = productCart.find(p => p.id === id);
+        if (item) {
+          if (item.quantity > 1) {
+            item.quantity -= 1;
+          } else {
+            // Remove completely
+            productCart = productCart.filter(p => p.id !== id);
+          }
+          saveProductCart();
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-qty-inc]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-qty-inc');
+        const item = productCart.find(p => p.id === id);
+        if (item) {
+          item.quantity += 1;
+          saveProductCart();
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-cart-remove]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-cart-remove');
+        productCart = productCart.filter(p => p.id !== id);
+        saveProductCart();
+      });
+    });
+
+    // Update WhatsApp Order Button Link
+    updateCartWhatsAppBtn();
+  }
+
+  // Update WhatsApp message pre-fill for product order
+  function updateCartWhatsAppBtn() {
+    if (!cartWhatsAppOrderBtn) return;
+
+    const deliveryVal = cartDeliveryPref ? cartDeliveryPref.value : 'pickup';
+    const deliveryLabel = deliveryVal === 'pickup' ? 'Store Pickup at Saloon (Ondo)' : 'Delivery to FUTA Campus Area';
+
+    // Compile items text list
+    const itemsText = productCart.map(item => `• *${item.name}* (Qty: ${item.quantity})`).join('\n');
+
+    const waText = `Hello Elevator Concept Unisex Saloon, I would like to place an order for the following grooming products! 🛍️✨
+
+*Products Requested:*
+${itemsText}
+
+*Delivery/Pickup Preference:*
+• ${deliveryLabel}
+
+*Note:* Please confirm final price and availability. Thank you!`;
+
+    const waLink = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(waText)}`;
+    cartWhatsAppOrderBtn.href = waLink;
+  }
+
+  // Bind change listener for delivery preference
+  if (cartDeliveryPref) {
+    cartDeliveryPref.addEventListener('change', () => {
+      updateCartWhatsAppBtn();
+    });
+  }
+
+  // ==========================================
   // 10. INITIALIZATION BOOTSTRAP
   // ==========================================
 
   // Populate active grids
   renderServices();
   renderPackages();
+  renderProducts();
   renderGallery();
   
-  // Update sticky cart
+  // Update sticky cart and product cart
   updateStickyCTA();
+  updateCartUI();
 
   // Simple Hash Router for QA & presentation navigation
   function handleHashRoute() {
@@ -1115,9 +1463,8 @@ Please verify the current pricing sheets and confirm my booking preview. Thank y
   document.addEventListener('click', (e) => {
     const waLink = e.target.closest('a[href*="wa.me"]');
     if (waLink) {
-      // Just warn the user that this is a simulated demo redirecting to a placeholder
-      console.log("Demo WhatsApp redirection triggered.");
-      alert("Demo Mode: This button simulates routing to Elevator Concept Unisex Saloon's WhatsApp. The phone number in this demo is a placeholder (2348000000000) and no actual bookings will be received until the salon owner replaces it with their real business number.");
+      console.log("Review WhatsApp redirection triggered.");
+      alert("Demo Mode: Current WhatsApp routing is set for review/testing to the designated test number (2348124937036) and can be replaced with the official saloon number after owner confirmation.");
     }
   });
 

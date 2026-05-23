@@ -130,8 +130,27 @@ To ensure high-fidelity prototyping without backend complexities, the platform u
 > All prices in the service catalog and package modules are labeled "Confirm with salon" or "Ask on WhatsApp". This prevents pricing confusion until you provide the final price sheets.
 
 > [!WARNING]
-> **WhatsApp Number is a Placeholder**
-> The booking messages are compiled using a safe placeholder number (`2348000000000`) and will redirect to your real business phone number once provided.
+> **WhatsApp Number is a Test Review Target**
+> Outgoing messages are currently compiled and routed to the designated review and testing phone number (**`2348124937036`**). This will be replaced with your active saloon business number after your final confirmation.
+
+---
+
+## 💰 Premium Development Packages & Proposal
+
+To support your business growth and local student market conversion, we offer three clear development paths. All packages feature premium dark-gold styling, lightning-fast performance, and a mobile-first responsive layout.
+
+| Package Option | Features Included | Development Cost | Basic Monthly Care |
+| :--- | :--- | :--- | :--- |
+| **Package 1 — Starter Public Presence** | Premium mobile responsive homepage, interactive service catalog with WhatsApp triggers, FUTA student scheduling indicators, and safety warning disclaimers. | **$150** (One-time) | **$50 / month** |
+| **Package 2 — Booking + Product Showcase** <br>*(Recommended for Launch)* | **Everything in Package 1** + Interactive Slide-over Shopping Cart, Beauty & Grooming Store Showcase, client-side dynamic Booking Wizard, and Live Status Tracker. | **$250** (One-time) | **$70 / month** |
+| **Package 3 — Full Premium Platform Upgrade** | **Everything in Package 2** + Complete Backend Integration (PostgreSQL database), Secure Admin dashboard login, custom looking photo upload tools, and automated notifications. | **$450** (One-time) | **$90 / month** |
+
+### 🌐 Separated External & Pass-Through Costs
+To maintain transparency, the following external and third-party utility expenses are handled separately (at cost, with zero agency markups):
+*   **Custom Domain Purchase:** ~$10 - $15 per year (e.g. `elevatorunisex.com`).
+*   **High-Performance Hosting:** Starts completely **Free** (on static server platforms) with optional upgrades as traffic grows.
+*   **Business Custom Email:** Optional add-on (approx. $3 - $6 per user/month via Google Workspace or similar).
+*   **Third-Party Integration & Marketing Tools:** WhatsApp Business APIs, paid social advertising campaigns, or high-fidelity photo/video shoots (Optional/Add-on).
 
 ---
 
@@ -142,7 +161,7 @@ To take the platform live, please align with us to replace placeholders with you
 | Detail Required | Purpose | Current Sandbox Value |
 | :--- | :--- | :--- |
 | **Official Price Lists** | Show accurate service pricing in the catalog. | `"Confirm with salon"` |
-| **Active WhatsApp Number** | Route bookings directly to your business phone. | `"2348000000000"` (Placeholder) |
+| **Active WhatsApp Number** | Route bookings directly to your business phone. | `"2348124937036"` (Test Target) |
 | **Styling Portfolio Photos** | Replace layout images with real cuts, braids, and nails. | Premium SVG vector shapes |
 | **Studio Map Pin / Address** | Help customers navigate directly to your location. | FUTA Main Road address details |
 | **Domain Name Choice** | The custom address where your site will live (e.g. `elevatorunisex.com`). | Local preview |
